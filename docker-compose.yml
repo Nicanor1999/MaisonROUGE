@@ -1,0 +1,7 @@
+services:
+  maisonrouge:
+    build: .
+    container_name: maisonrouge
+    ports:
+      - "3001:80"
+    restart: always
