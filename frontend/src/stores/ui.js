@@ -1,0 +1,25 @@
+import { defineStore } from 'pinia'
+
+export const useUiStore = defineStore('ui', {
+  state: () => ({
+    isLoading: false,
+    isMenuOpen: false,
+  }),
+  actions: {
+    showLoader() {
+      this.isLoading = true
+    },
+    hideLoader() {
+      this.isLoading = false
+    },
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    },
+    closeMenu() {
+      this.isMenuOpen = false
+    },
+    openMenu() {
+      this.isMenuOpen = true
+    },
+  },
+})
