@@ -1,7 +1,7 @@
 <template>
   <span ref="keyhole" class="keyhole" aria-hidden="true"></span>
 
-  <span ref="arrow" class="arrow" aria-hidden="true">
+  <!-- <span ref="arrow" class="arrow" aria-hidden="true">
     <svg
       width="20"
       height="20"
@@ -16,17 +16,26 @@
         stroke-linejoin="round"
       />
     </svg>
-  </span>
-
+  </span> -->
   <main class="main">
     <section ref="primarySection" class="section section--primary">
       <div class="section__content">
         <figure>
-          <img
+          <!-- <img
             src="https://picsum.photos/id/315/1600/1600"
             width="1600"
             height="1600"
-          />
+          /> -->
+          <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="@/assets/videos/c.mp4" type="video/mp4" />
+          </video>
         </figure>
 
         <h1>Attb vero eos et accusamus.</h1>
@@ -47,17 +56,11 @@
       <div class="section__content">
         <h2>Second section</h2>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </section>
 
@@ -65,9 +68,7 @@
       <div class="section__content">
         <h2>Third section</h2>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </section>
   </main>
@@ -80,24 +81,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   data() {
     return {
       ctx: null,
-    }
+    };
   },
   mounted() {
-    this.initializeAnimation()
+    this.initializeAnimation();
   },
   beforeUnmount() {
     if (this.ctx) {
-      this.ctx.revert()
+      this.ctx.revert();
     }
   },
   methods: {
     initializeAnimation() {
       const isAnimationOk = window.matchMedia(
-        "(prefers-reduced-motion: no-preference)"
+        "(prefers-reduced-motion: no-preference)",
       ).matches;
 
       const scrub = true;
@@ -106,8 +107,16 @@ export default {
 
       this.ctx = gsap.context(() => {
         gsap.from(this.$refs.keyhole, {
-          clipPath:
-            "polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%)",
+          clipPath: `polygon(0% 0%,
+            0% 100%,
+            0% 100%,
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%,
+            0% 100%,
+            100% 100%,
+            100% 0%)`,
 
           scrollTrigger: {
             trigger: this.$refs.primarySection,
@@ -129,9 +138,9 @@ export default {
           },
         });
       });
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -154,17 +163,17 @@ $multiplier: 1.3;
   clip-path: polygon(
     0% 0%,
     0% 100%,
-    0 100%,
-    0 0,
-    100% 0,
-    100% 100%,
-    0 100%,
-    0 100%,
+    25% 100%,
+    25% 25%,
+    75% 25%,
+    75% 75%,
+    25% 75%,
+    25% 100%,
     100% 100%,
     100% 0%
   );
 
-  z-index: 1;
+  z-index: 3;
 }
 
 .arrow {
@@ -189,7 +198,9 @@ html {
 }
 
 body {
-  font: 400 1.2rem/1.45 "Mulish", sans-serif;
+  font:
+    400 1.2rem/1.45 "Mulish",
+    sans-serif;
   background: $contrast;
   color: $text;
 }
@@ -252,6 +263,16 @@ h5 {
     margin: 0 auto;
     padding: 80px 40px;
   }
+}
+
+.hero__video {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+  // z-index: -1;
 }
 
 @keyframes float {

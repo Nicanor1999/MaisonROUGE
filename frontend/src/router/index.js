@@ -2,12 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useUiStore } from '@/stores/ui'
 
 import HomeView from '@/views/Home.vue'
+import HomeeView from '@/views/Homee.vue'
+
 
 const routes = [
     {
         path: '/',
         name: 'HomeView',
         component: HomeView
+    },
+        {
+        path: '/home',
+        name: 'HomeeView',
+        component: HomeeView
     },
     // {
     //     path: '/admin',
