@@ -1,25 +1,33 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useUiStore = defineStore('ui', {
+export const useUiStore = defineStore("ui", {
   state: () => ({
+    isScrolling: false,
+    isNavOpen: false,
     isLoading: false,
     isMenuOpen: false,
   }),
   actions: {
+    showScrollBar() {
+      this.isScrolling = true;
+    },
+    hideScrollBar() {
+      this.isScrolling = false;
+    },
     showLoader() {
-      this.isLoading = true
+      this.isLoading = true;
     },
     hideLoader() {
-      this.isLoading = false
+      this.isLoading = false;
     },
     toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
+      this.isMenuOpen = !this.isMenuOpen;
     },
     closeMenu() {
-      this.isMenuOpen = false
+      this.isMenuOpen = false;
     },
     openMenu() {
-      this.isMenuOpen = true
+      this.isMenuOpen = true;
     },
   },
-})
+});

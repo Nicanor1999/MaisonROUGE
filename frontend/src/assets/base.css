@@ -6,7 +6,7 @@
   --bg-nav: #292D2F;
   --bg-hidden: #FEFADC;
 
-  --primary: #F3DFA2;
+  --primary: #67100F;
   --important: #BB4430;
   --vt-c-black-mute: #282828;
 
@@ -64,32 +64,34 @@ body {
   /* min-height: 100vh; */
   /* color: var(--color-text); */
   /* background: var(--bg-1); */
-  transition:
+  /* transition:
     color 0.5s,
-    background-color 0.5s;
+    background-color 0.5s; */
+  height: 100vh;
+  width: 100vw;
   line-height: 1.6;
-  font-family:
-    'Nunito',
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
+    font-family: "Quattrocento", serif;
+
+  /* font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 p {
-  font-family: "Bitter", serif;
+  font-family: "Quattrocento", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+#app {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
