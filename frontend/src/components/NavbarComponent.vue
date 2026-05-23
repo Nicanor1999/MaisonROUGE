@@ -108,7 +108,7 @@ img {
 }
 
 .menu-icon:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--primary);
 }
 
 .menu-icon svg {
@@ -170,7 +170,7 @@ img {
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: bolder ;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--primary);
     font-family: "Quattrocento Sans", sans-serif;
 
 }

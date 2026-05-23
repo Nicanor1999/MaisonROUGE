@@ -2,18 +2,12 @@ import { defineStore } from "pinia";
 
 export const useUiStore = defineStore("ui", {
   state: () => ({
-    isScrolling: false,
+    isLeavingHero: false,
     isNavOpen: false,
     isLoading: false,
     isMenuOpen: false,
   }),
   actions: {
-    showScrollBar() {
-      this.isScrolling = true;
-    },
-    hideScrollBar() {
-      this.isScrolling = false;
-    },
     showLoader() {
       this.isLoading = true;
     },
@@ -29,5 +23,6 @@ export const useUiStore = defineStore("ui", {
     openMenu() {
       this.isMenuOpen = true;
     },
+    
   },
 });

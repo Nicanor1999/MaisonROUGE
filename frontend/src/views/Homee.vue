@@ -5,67 +5,41 @@
       <video class="hero__video" autoplay muted loop playsinline preload="auto">
         <source src="@/assets/videos/c.mp4" type="video/mp4" />
       </video>
-      <div v-if="ui.hideScrollBar" class="scroll">
+      <div v-if="!ui.isLeavingHero" class="scroll">
         <span>SCROLLEZ</span>
         <div class="scrollBar"></div>
       </div>
     </div>
     <div class="firstSection">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nobis
-      cupiditate incidunt. Amet nisi quasi fugiat temporibus blanditiis tenetur
-      saepe nesciunt soluta eos repellat voluptates similique omnis nobis culpa
-      doloremque, rem eligendi alias, maiores animi? Inventore id atque,
-      dignissimos autem ab in quas quibusdam velit possimus, saepe, aliquam
-      voluptatem impedit et culpa? Debitis nostrum mollitia rerum optio itaque
-      autem iusto, cupiditate quo dicta esse atque quia doloremque et maiores
-      earum corporis minus voluptatum nobis amet, molestias, nesciunt
-      consequuntur. Necessitatibus porro ipsam consectetur sapiente, placeat,
-      officiis beatae saepe facere recusandae harum adipisci voluptatem ut ad
-      magni ab nostrum, id molestias. Neque rem, nihil provident laboriosam,
-      suscipit cumque ut quos nisi commodi beatae quas dicta animi quibusdam
-      asperiores accusantium maxime atque tenetur, dolorum odio reprehenderit
-      adipisci ipsam reiciendis! Veniam ipsum suscipit praesentium at voluptate
-      numquam atque consequatur, velit minus sed eius dicta ipsa sunt inventore,
-      magnam molestias nostrum repellat alias distinctio id dolor. Quae magni
-      reprehenderit iure, est nulla aliquid, suscipit praesentium non doloremque
-      exercitationem ad at odio illo doloribus. Enim explicabo, reiciendis ipsum
-      culpa impedit adipisci illum exercitationem cum maiores. Assumenda,
-      molestiae provident reiciendis dignissimos ex recusandae maiores, enim
-      similique quaerat officiis aut iure dolore deserunt ipsum nisi minima
-      nihil eaque totam accusantium vitae! Ipsa atque ad modi est? Eius debitis
-      pariatur provident, unde accusamus voluptatibus similique ratione
-      veritatis nam tenetur temporibus. Architecto reiciendis beatae vel omnis
-      itaque consequatur maiores inventore temporibus. Pariatur consectetur
-      minima exercitationem molestias earum enim deleniti soluta molestiae sint
-      culpa, doloribus, facilis vel? Cum nostrum, consectetur quasi, quos fugiat
-      sit facilis tempora nesciunt explicabo vel laudantium. Cum magnam aut
-      saepe voluptatibus ducimus alias ab, porro praesentium doloribus mollitia
-      placeat officia deserunt reiciendis minus! Fuga facere reiciendis illum
-      animi? Doloremque cum error voluptates deleniti. Natus fugiat nesciunt
-      repellendus perspiciatis sapiente consequuntur numquam molestiae aut ad
-      facere, et, mollitia distinctio, nobis similique non nisi. Pariatur,
-      quibusdam? Quam, dolore? Vero assumenda veniam quaerat repellendus
-      aspernatur, soluta laboriosam tenetur, accusamus nemo debitis temporibus
-      molestiae. Modi, tenetur blanditiis. Error quibusdam officia optio
-      perspiciatis. Aliquid nemo nesciunt, ducimus necessitatibus veniam
-      recusandae odio quod perspiciatis corporis quis. Aliquam ullam officiis
-      minima assumenda consectetur tempore doloribus enim vero eius ad rerum,
-      numquam temporibus, vitae fuga. Molestiae autem in ut architecto, tenetur
-      quas! Voluptatum non nostrum, dolorem minima debitis maiores quae cumque
-      perferendis? Maiores voluptatibus pariatur tenetur fugit. Ipsum
-      dignissimos tenetur ullam mollitia officiis nobis velit quo totam
-      laudantium id ducimus eaque quaerat in doloremque laboriosam omnis
-      excepturi earum atque distinctio at molestiae, sunt iusto officia
-      suscipit! Tempore, magni sint blanditiis modi assumenda corporis velit
-      rerum quae cumque minima necessitatibus tenetur possimus fuga adipisci
-      magnam deserunt perferendis labore, eum consectetur! Aliquam quaerat,
-      culpa iste in asperiores expedita est corrupti eius assumenda debitis
-      excepturi doloremque cupiditate magni enim explicabo blanditiis voluptates
-      nesciunt impedit et vero voluptate? Ipsum aspernatur, est sunt aut autem
-      nulla molestias qui culpa debitis, recusandae mollitia assumenda tempore!
-      Dolorem, ab qui tenetur vitae nam laudantium accusamus explicabo
-      accusantium quis et officiis. Sed, iure, quam ea cumque autem facere
-      obcaecati incidunt eveniet error veniam fuga.
+      <div class="welcomePart">
+        <div class="part1">
+          <div class="subPart1 font">MAISON</div>
+          <div class="subPart2">
+            <div class="africa">
+              <video
+                class="hero__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+              >
+                <source src="@/assets/videos/c.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div class="subPart3 font">ROUGE</div>
+        </div>
+        <div class="part2">
+          <div class="subPart4 font">COTONOU</div>
+          <div class="subPart5">
+            <div class="box">
+              <div class="bar"></div>
+              <div class="text">BENIN</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -74,10 +48,9 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavbarComponent from "@/components/NavbarComponent.vue";
-import { useUiStore } from '@/stores/ui'
+import { useUiStore } from "@/stores/ui";
 
-
-const ui = useUiStore()
+// const ui = useUiStore()
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,6 +62,8 @@ export default {
   data() {
     return {
       ctx: null,
+      lastScrollPosition: 0,
+      ui: useUiStore(),
     };
   },
   mounted() {
@@ -124,7 +99,7 @@ export default {
             start: "top top",
             end: "+=1500",
             scrub,
-            markers: true,
+            markers: false,
           },
         });
 
@@ -181,7 +156,7 @@ export default {
 
 .heroSection .scroll {
   width: 5%;
-  height: 15%;
+  height: 10%;
   // background-color: darkgoldenrod;
   position: absolute;
   bottom: 0;
@@ -200,5 +175,131 @@ export default {
   width: 0.1rem;
   height: 80%;
   background-color: white;
+}
+
+.firstSection {
+  height: 138vh;
+  width: 100%;
+  position: relative;
+  top: 12vh;
+  // background-color: darkcyan;
+  display: flex;
+  justify-content: center;
+}
+
+.firstSection .welcomePart {
+  height: 88vh;
+  width: 90%;
+  // background-color: darkgoldenrod;
+}
+
+.firstSection .welcomePart .part1 {
+  height: 60%;
+  width: 100%;
+  // background-color: aqua;
+  display: flex;
+}
+
+.firstSection .welcomePart .part1 .subPart1 {
+  // border: 1px solid red;
+  width: 33.33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.firstSection .welcomePart .part1 .subPart2 {
+  // border: 1px solid red;
+  width: 33.33%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.firstSection .welcomePart .part1 .subPart2 .africa {
+  mask-image: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M201.56 19.495l-87.79 9.131-73.745 94.814v52.676l56.186 61.805 64.615-13.344 49.164 9.832-10.535 37.926 33.711 61.103-16.855 42.842 39.79 116.225 53.62-8.768 49.164-55.484 4.213-38.629 31.605-23.879-6.322-69.531 83.594-106.994-51.989 7.263-79.363-138.359-125.016-8.428-14.046-30.2zm252.346 319.8l-14.402 20.86-13.408.496c-11.849 24.321-12.598 38.019-13.907 66.547l17.383 4.471 21.852-52.147 2.482-40.226z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M201.56 19.495l-87.79 9.131-73.745 94.814v52.676l56.186 61.805 64.615-13.344 49.164 9.832-10.535 37.926 33.711 61.103-16.855 42.842 39.79 116.225 53.62-8.768 49.164-55.484 4.213-38.629 31.605-23.879-6.322-69.531 83.594-106.994-51.989 7.263-79.363-138.359-125.016-8.428-14.046-30.2zm252.346 319.8l-14.402 20.86-13.408.496c-11.849 24.321-12.598 38.019-13.907 66.547l17.383 4.471 21.852-52.147 2.482-40.226z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  width: 300px;
+  height: 300px;
+  background-color: black;
+}
+
+.firstSection .welcomePart .part1 .subPart3 {
+  // border: 1px solid red;
+  width: 33.33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.firstSection .welcomePart .part2 {
+  height: 40%;
+  width: 100%;
+  // background-color: orangered;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  // justify-content: space-between;
+}
+
+.firstSection .welcomePart .part2 .subPart4 {
+  // border: 1px solid red;
+  width: 100%;
+  height: 50%;
+}
+
+.firstSection .welcomePart .part2 .subPart5 {
+  // border: 1px solid red;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstSection .welcomePart .part2 .subPart5 .box {
+  width: 10%;
+  height: 80%;
+  // background-color: pink;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+
+.firstSection .welcomePart .part2 .subPart5 .box .bar {
+  width: 100%;
+  height: 10%;
+  background-color: var(--primary);
+  position: absolute;
+  z-index: 1;
+}
+
+.firstSection .welcomePart .part2 .subPart5 .box .text {
+  font-family: "Futura LT", sans-serif;
+  font-weight: lighter;
+  color: var(--primary);
+  font-size: 1.8rem;
+  position: absolute;
+  z-index: 4;
+  top: -10%;
+  left: 12%;
+  background-color: var(--bg-1);
+}
+
+.font {
+  font-size: 5rem;
+  color: var(--primary);
+  font-family: "Futura LT", sans-serif;
+  // font-weight: ;
 }
 </style>
