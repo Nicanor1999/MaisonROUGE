@@ -16,14 +16,7 @@
           <div class="subPart1 font">MAISON</div>
           <div class="subPart2">
             <div class="africa">
-              <video
-                class="hero__video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-              >
+              <video class="hero__video" autoplay muted loop playsinline preload="auto">
                 <source src="@/assets/videos/c.mp4" type="video/mp4" />
               </video>
             </div>
@@ -85,23 +78,65 @@ export default {
       if (!isAnimationOk) return;
 
       this.ctx = gsap.context(() => {
-        gsap.from(".hero__video", {
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          position: "fixed",
-          clipPath: `polygon(0% 0%,
-                            0% 100%,
-                            100% 100%,
-                            100% 0%)`,
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: ".heroSection",
             start: "top top",
-            end: "+=1500",
+            end: "+=600",
             scrub,
             markers: false,
-          },
+            onEnter:()=>{
+              this.ui.isScrolling = true;
+            },
+            onLeave: () => {
+              this.ui.isLeavingHero = true;
+              this.animateSvg();
+            },
+            onEnterBack: () => {
+              this.ui.isLeavingHero = false;
+              this.animateBackSvg();
+              this.ui.isScrolling = false;
+            }
+          }
         });
+
+        // 1. Shrink and morph over 100% of the scroll duration (0.0 to 1.0)
+        tl.fromTo(".heroSection .hero__video",
+          {
+            width: "100vw",
+            height: "100vh",
+            position: "fixed",
+            left: "0%",
+            top: "0%",
+            xPercent: 0,
+            yPercent: 0,
+            webkitMaskSize: "1500% 1500%",
+            maskSize: "1500% 1500%",
+            opacity: 1,
+          },
+          {
+            width: "300px",
+            height: "300px",
+            left: "50%",
+            top: "50%",
+            xPercent: -50,
+            yPercent: -50,
+            webkitMaskSize: "100% 100%",
+            maskSize: "100% 100%",
+            duration: 1,
+            ease: "none"
+          }
+        );
+
+        // 2. Smoothly fade out starting at 75% of the scroll timeline (0.75 to 1.0)
+        tl.to(".heroSection .hero__video",
+          {
+            opacity: 0,
+            duration: 0.01,
+            ease: "power1.out"
+          },
+          0.99
+        );
 
         // gsap.to(this.$refs.arrow, {
         //   opacity: 0,
@@ -115,7 +150,27 @@ export default {
         // });
       });
     },
-  },
+    animateSvg() {
+      if (!this.ui.isLeavingHero) return;
+
+      gsap.to(".africa", {
+        opacity: 1,
+        scale: 0.8,
+        duration: 0,
+        ease: "power2.inOut",
+        delay: 0.3,
+      });
+    },
+    animateBackSvg() {
+      gsap.to(".africa", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0,
+        ease: "power2.inOut",
+        delay: 0.3,
+      });
+    }
+  }
 };
 </script>
 
@@ -146,12 +201,20 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  // position: fixed;
-  // inset: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
   pointer-events: none;
   // background: $accent;
 
-  clip-path: polygon(40% 40%, 40% 60%, 60% 60%, 60% 40%);
+  mask-image: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M201.56 19.495l-87.79 9.131-73.745 94.814v52.676l56.186 61.805 64.615-13.344 49.164 9.832-10.535 37.926 33.711 61.103-16.855 42.842 39.79 116.225 53.62-8.768 49.164-55.484 4.213-38.629 31.605-23.879-6.322-69.531 83.594-106.994-51.989 7.263-79.363-138.359-125.016-8.428-14.046-30.2zm252.346 319.8l-14.402 20.86-13.408.496c-11.849 24.321-12.598 38.019-13.907 66.547l17.383 4.471 21.852-52.147 2.482-40.226z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M201.56 19.495l-87.79 9.131-73.745 94.814v52.676l56.186 61.805 64.615-13.344 49.164 9.832-10.535 37.926 33.711 61.103-16.855 42.842 39.79 116.225 53.62-8.768 49.164-55.484 4.213-38.629 31.605-23.879-6.322-69.531 83.594-106.994-51.989 7.263-79.363-138.359-125.016-8.428-14.046-30.2zm252.346 319.8l-14.402 20.86-13.408.496c-11.849 24.321-12.598 38.019-13.907 66.547l17.383 4.471 21.852-52.147 2.482-40.226z'/%3E%3C/svg%3E");
+  mask-size: 1500% 1500%;
+  -webkit-mask-size: 1500% 1500%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
 }
 
 .heroSection .scroll {
@@ -181,7 +244,7 @@ export default {
   height: 138vh;
   width: 100%;
   position: relative;
-  top: 12vh;
+  top: 20vh;
   // background-color: darkcyan;
   display: flex;
   justify-content: center;
@@ -214,7 +277,7 @@ export default {
   width: 33.33%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 }
 
@@ -227,9 +290,10 @@ export default {
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-position: center;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-color: black;
+  opacity: 0;
 }
 
 .firstSection .welcomePart .part1 .subPart3 {

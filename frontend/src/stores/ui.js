@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 
 export const useUiStore = defineStore("ui", {
   state: () => ({
+    isScrolling:false,
     isLeavingHero: false,
     isNavOpen: false,
     isLoading: false,

@@ -1,8 +1,11 @@
 <template>
-  <div class="navBar">
+  <div class="navBar" :class="{ scrolled: ui.isScrolling }">
     <div class="container">
       <div class="logo">
-        <img src="@/assets/pictures/logo-light.png" alt="" />
+        <img 
+        :key="currentlogo"
+        :src="logoSwitch"
+        alt="" />
       </div>
       <div class="bookPart">
         <div class="lang">
@@ -42,13 +45,32 @@
   </div>
 </template>
 <script>
+import light from "@/assets/pictures/logo-light.png";
+import dark from "@/assets/pictures/logo-dark.jpg";
+import { useUiStore } from "@/stores/ui";
+
 export default {
   name: "NavbarComponent",
   data() {
     return {
+      ui: useUiStore(),
       isHoveringMenu: false,
+      currentlogo: "",
+      logoSrc:""
     };
   },
+  computed:{
+    logoSwitch(){
+      if (this.ui.isScrolling){
+        this.logoSrc = dark;
+        return this.logoSrc;
+      }else{
+        this.logoSrc = light;
+        return this.logoSrc;
+      }
+    },
+    
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -59,7 +81,34 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.142);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.142);
+  transition: all 0.3s ease-in-out;
+
+  &.scrolled {
+    background-color: var(--bg-1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    .lang button {
+      color: var(--primary);
+    }
+
+    .lang .fr {
+      border-right: 1.5px solid var(--primary);
+    }
+
+    .bookButton span {
+      color: var(--primary);
+    }
+
+    .menu-icon {
+      color: var(--primary);
+    }
+
+    .bookButton .buttonCircle {
+      background-color: var(--primary-variant);
+    }
+  }
 }
 
 .container {
@@ -210,8 +259,14 @@ img {
   top: 15%;
   color: white;
   font-family: "Quattrocento Sans", sans-serif;
-  font-weight: 600;
+  // font-weight: lighter;
 }
+
+.bookButton:hover span {
+  color: white;
+  font-weight: bolder;
+}
+
 
 .bookButton:hover .buttonCircle {
   width: 100%;
