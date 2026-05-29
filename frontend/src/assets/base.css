@@ -11,7 +11,8 @@
   --important: #BB4430;
   --vt-c-black-mute: #282828;
 
-  --vt-c-indigo: #2c3e50;
+  --text-color: #001011;
+  --text-color-2: #7D7E75;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -99,8 +100,8 @@ body {
   height: 100vh;
   width: 100vw;
   line-height: 1.6;
-    font-family: "Quattrocento", serif;
-
+  font-family: "Quattrocento", serif;
+  color: var(--text-color);
   /* font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

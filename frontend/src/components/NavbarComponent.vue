@@ -19,9 +19,10 @@
         <div class="menuButton">
           <button
             class="menu-icon"
+            @click="ui.toggleMenu()"
             @mouseenter="isHoveringMenu = true"
             @mouseleave="isHoveringMenu = false"
-            :class="{ active: isHoveringMenu }"
+            :class="{ active: isHoveringMenu || ui.isMenuOpen }"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -34,6 +34,7 @@
         </div>
       </div>
     </div>
+    <FullNavbarComponent></FullNavbarComponent>
   </div>
 </template>
 
@@ -42,6 +43,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import { useUiStore } from "@/stores/ui";
+import FullNavbarComponent from "@/components/FullNavbarComponent.vue";
 
 // const ui = useUiStore()
 
@@ -51,6 +53,7 @@ export default {
   name: "HomeeView",
   components: {
     NavbarComponent,
+    FullNavbarComponent
   },
   data() {
     return {
