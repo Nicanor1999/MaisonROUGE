@@ -67,7 +67,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text-color-2);
+  color: var(--primary);
   padding: 0.5rem;
   position: absolute;
   top: 1rem;
@@ -82,9 +82,9 @@ export default {
 
   &:hover {
     transform: rotate(90deg) scale(1.1);
-    color: var(--primary);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--primary);
+    color: white;
+    background-color: var(--primary);
+    // border-color: var(--primary);
   }
 
   svg {

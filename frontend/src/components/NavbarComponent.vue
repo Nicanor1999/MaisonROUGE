@@ -2,10 +2,7 @@
   <div class="navBar" :class="{ scrolled: ui.isScrolling }">
     <div class="container">
       <div class="logo">
-        <img 
-        :key="currentlogo"
-        :src="logoSwitch"
-        alt="" />
+        <img :key="currentlogo" :src="logoSwitch" alt="" />
       </div>
       <div class="bookPart">
         <div class="lang">
@@ -57,21 +54,20 @@ export default {
       ui: useUiStore(),
       isHoveringMenu: false,
       currentlogo: "",
-      logoSrc:""
+      logoSrc: "",
     };
   },
-  computed:{
-    logoSwitch(){
-      if (this.ui.isScrolling){
+  computed: {
+    logoSwitch() {
+      if (this.ui.isScrolling) {
         this.logoSrc = dark;
         return this.logoSrc;
-      }else{
+      } else {
         this.logoSrc = light;
         return this.logoSrc;
       }
     },
-    
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -87,6 +83,7 @@ export default {
 
   &.scrolled {
     background-color: var(--bg-1);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.24);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
@@ -113,7 +110,7 @@ export default {
 }
 
 .container {
-//   background-color: darkmagenta;
+  //   background-color: darkmagenta;
   height: 65%;
   width: calc(100% - 70px);
   display: flex;
@@ -128,7 +125,7 @@ img {
 }
 
 .bookPart {
-//   background-color: darkgreen;
+  //   background-color: darkgreen;
   width: 25%;
   height: 100%;
   display: flex;
@@ -142,7 +139,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-//   background-color: darkred;
+  //   background-color: darkred;
 }
 
 .menu-icon {
@@ -150,7 +147,7 @@ img {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -198,7 +195,7 @@ img {
 
 .lang {
   width: 20%;
-//   background-color: darkred;
+  //   background-color: darkred;
   height: 50%;
   display: flex;
 }
@@ -208,10 +205,9 @@ img {
   border: none;
   cursor: pointer;
   font-size: 0.8rem;
-  font-weight: lighter ;
-  color: #FFFFFF;
-    font-family: "Quattrocento Sans", sans-serif;
-
+  font-weight: lighter;
+  color: #ffffff;
+  font-family: "Quattrocento Sans", sans-serif;
 }
 
 .lang button:hover {
@@ -219,10 +215,9 @@ img {
   border: none;
   cursor: pointer;
   font-size: 0.8rem;
-  font-weight: bolder ;
+  font-weight: bolder;
   color: var(--primary);
-    font-family: "Quattrocento Sans", sans-serif;
-
+  font-family: "Quattrocento Sans", sans-serif;
 }
 
 .lang .fr {
@@ -236,7 +231,7 @@ img {
 .bookButton {
   width: 35%;
   height: 70%;
-//   background-color: darkred;
+  //   background-color: darkred;
   position: relative;
   display: flex;
   align-items: center;
@@ -267,7 +262,6 @@ img {
   color: white;
   font-weight: bolder;
 }
-
 
 .bookButton:hover .buttonCircle {
   width: 100%;
