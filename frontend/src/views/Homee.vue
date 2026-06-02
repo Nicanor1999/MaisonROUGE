@@ -34,7 +34,9 @@
         </div>
       </div>
     </div>
-    <FullNavbarComponent></FullNavbarComponent>
+    <FullNavbarComponent
+    data-aos="fade"
+    ></FullNavbarComponent>
   </div>
 </template>
 

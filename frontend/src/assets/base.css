@@ -126,3 +126,8 @@ p {
   box-sizing: border-box;
   background-color: #FCEAE9;
 }
+
+.primary-light{
+  color: var(--primary);
+  opacity: 34%;
+}
