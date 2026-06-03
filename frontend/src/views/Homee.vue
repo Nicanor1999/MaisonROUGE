@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <NavbarComponent class="NavbarComponent"></NavbarComponent>
     <div class="heroSection">
       <video class="hero__video" autoplay muted loop playsinline preload="auto">
         <source src="@/assets/videos/c.mp4" type="video/mp4" />
@@ -34,18 +33,13 @@
         </div>
       </div>
     </div>
-    <FullNavbarComponent
-    data-aos="fade"
-    ></FullNavbarComponent>
   </div>
 </template>
 
 <script>
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import NavbarComponent from "@/components/NavbarComponent.vue";
 import { useUiStore } from "@/stores/ui";
-import FullNavbarComponent from "@/components/FullNavbarComponent.vue";
 
 // const ui = useUiStore()
 
@@ -53,10 +47,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "HomeeView",
-  components: {
-    NavbarComponent,
-    FullNavbarComponent
-  },
   data() {
     return {
       ctx: null,
@@ -70,7 +60,9 @@ export default {
   beforeUnmount() {
     if (this.ctx) {
       this.ctx.revert();
+      this.ctx = null;
     }
+    ScrollTrigger.killAll();
   },
   methods: {
     initializeAnimation() {
@@ -188,10 +180,6 @@ export default {
   flex-direction: column;
 }
 
-.NavbarComponent {
-  position: fixed;
-  z-index: 3;
-}
 
 .heroSection {
   width: 100%;
@@ -240,7 +228,7 @@ export default {
 }
 
 .heroSection .scroll .scrollBar {
-  width: 0.1rem;
+  width: 0.08rem;
   height: 80%;
   background-color: white;
 }

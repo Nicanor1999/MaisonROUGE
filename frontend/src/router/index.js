@@ -1,20 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useUiStore } from '@/stores/ui'
 
-import HomeView from '@/views/Home.vue'
+import Layout from '@/layouts/Layout.vue'
+// import HomeView from '@/views/Home.vue'
 import HomeeView from '@/views/Homee.vue'
+import AccomodationView from '@/views/Accomodation.vue'
 
 
 const routes = [
     {
         path: '/',
-        name: 'HomeView',
-        component: HomeView
-    },
-        {
-        path: '/home',
-        name: 'HomeeView',
-        component: HomeeView
+        name: 'Layout',
+        component: Layout,
+        children: [
+            {
+                path: '/',
+                name: 'HomeeView',
+                component: HomeeView
+            },
+            {
+                path: '/accomodation',
+                name: 'AccomodationView',
+                component: AccomodationView
+            }
+        ]
     },
     // {
     //     path: '/admin',

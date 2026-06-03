@@ -15,16 +15,20 @@
       <div class="container">
         <div class="containerContent">
           <div class="image">
-
+            <div class="word1">MAISON</div>
+            <div class="image-wrapper">
+              <img v-for="(img,index) in imgList" :key="index" :src="img" alt="" :class="{active: activeIndex === index}">
+            </div>
+            <div class="word2">ROUGE</div>
           </div>
           <div class="nav">
             <ul>
-              <li><a href="" class="primary-light">Accueil</a></li>
-              <li><a href="" class="primary-light">Hébergement</a></li>
-              <li><a href="" class="primary-light">Restaurant</a></li>
-              <li><a href="" class="primary-light">Services</a></li>
-              <li><a href="" class="primary-light">Expositions</a></li>
-              <li><a href="" class="primary-light">Nous Contacter</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 0" @click.prevent="handleLinkClick('/')">Accueil</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 1" @click.prevent="handleLinkClick('/accomodation')">Hébergement</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 2" @click.prevent="handleLinkClick('/restaurant')">Restaurant</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 3" @click.prevent="handleLinkClick('/services')">Services</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 4" @click.prevent="handleLinkClick('/expositions')">Expositions</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 5" @click.prevent="handleLinkClick('/contact')">Nous Contacter</a></li>
             </ul>
           </div>
         </div>
@@ -35,27 +39,47 @@
 
 <script>
 import { useUiStore } from "@/stores/ui";
+import photo1 from "@/assets/pictures/photo1.png";
+import photo2 from "@/assets/pictures/photo5.jpg";
+import photo3 from "@/assets/pictures/photo3.jpg";
+import photo4 from "@/assets/pictures/photo8.jpg";
+import photo5 from "@/assets/pictures/photo4.jpg";
+import photo6 from "@/assets/pictures/photo6.jpg";
 
 export default {
   name: "FullNavbarComponent",
   data() {
     return {
       ui: useUiStore(),
+      imgList:[photo1,photo2,photo3,photo4,photo5,photo6],
+      activeIndex: 0,
     };
   },
   methods: {
     handleLinkClick(route) {
       this.ui.closeMenu();
-      if (route.startsWith('/')) {
-        this.$router.push(route);
-      } else if (route.startsWith('#')) {
-        // Handle smooth scrolling for hash links
-        const element = document.querySelector(route);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        if (route.startsWith('/')) {
+          this.$router.push(route);
+        } else if (route.startsWith('#')) {
+          // Handle smooth scrolling for hash links
+          const element = document.querySelector(route);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
         }
-      }
+      }, 600); // wait for animate__slideOutUp to finish
     }
+  },
+  computed:{
+    getActiveIndex(){
+      console.log(this.activeIndex);
+      // return this.activeIndex;
+    }
+  },
+  mounted(){
+    // Computed properties are accessed as properties, not called as functions
+    console.log(this.getActiveIndex);
   }
 };
 </script>
@@ -105,7 +129,7 @@ export default {
 .container {
   height: 85%;
   width: 93%;
-  background-color: teal;
+  // background-color: teal;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -114,7 +138,7 @@ export default {
 .container .containerContent {
   height: 80%;
   width: 95%;
-  background-color: darkred;
+  // background-color: darkred;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,13 +147,63 @@ export default {
 .container .containerContent .image {
   height: 100%;
   width: 60%;
-  background-color: black;
+  // background-color: black;
+  position: relative;
+}
+
+.container .containerContent .image .word1{
+  position: absolute;
+  top: -20%;
+  left: -8%;
+  z-index: 2;
+  font-size: 6rem;
+    font-family: "Futura LT", sans-serif;
+    color: var(--primary);
+
+}
+
+.container .containerContent .image .word2{
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  z-index: 2;
+  font-size: 6rem;
+  color: var(--primary);
+    font-family: "Futura LT", sans-serif;
+
+}
+
+.container .containerContent .image .image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.container .containerContent .image .image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.container .containerContent .image .image-wrapper img.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .container .containerContent .nav {
   height: 80%;
   width: 25%;
-  background-color: darkslateblue;
+  // background-color: darkslateblue;
 }
 
 .container .containerContent .nav ul {
@@ -137,7 +211,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  text-align: right;
+  text-align: center;
   height: 100%;
   width: 100%;
 }
@@ -150,11 +224,14 @@ export default {
 .container .containerContent .nav ul li a{
   text-decoration: none;
   font-size: 1.8rem;
+  transition: all 0.4s ease-in-out;
 }
 
 .container .containerContent .nav ul li a:hover {
   opacity: 100%;
   text-decoration: underline dotted;
-  font-weight: bolder;
+  // font-weight: bolder;
 }
+
+
 </style>
