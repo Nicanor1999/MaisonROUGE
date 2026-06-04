@@ -2,7 +2,9 @@
   <div class="navBar" :class="{ scrolled: ui.isScrolling }">
     <div class="container">
       <div class="logo">
-        <img :key="currentlogo" :src="logoSwitch" alt="" />
+        <router-link to="/" class="logo-link">
+          <img :key="currentlogo" :src="logoSwitch" alt="" />
+        </router-link>
       </div>
       <div class="bookPart">
         <div class="lang">

@@ -45,6 +45,9 @@ import photo3 from "@/assets/pictures/photo3.jpg";
 import photo4 from "@/assets/pictures/photo8.jpg";
 import photo5 from "@/assets/pictures/photo4.jpg";
 import photo6 from "@/assets/pictures/photo6.jpg";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "FullNavbarComponent",
@@ -59,6 +62,7 @@ export default {
     handleLinkClick(route) {
       this.ui.closeMenu();
       setTimeout(() => {
+        ScrollTrigger.killAll();
         if (route.startsWith('/')) {
           this.$router.push(route);
         } else if (route.startsWith('#')) {
