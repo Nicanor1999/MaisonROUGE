@@ -62,7 +62,7 @@ export default {
     handleLinkClick(route) {
       this.ui.closeMenu();
       setTimeout(() => {
-        ScrollTrigger.killAll();
+        // ScrollTrigger.killAll();
         if (route.startsWith('/')) {
           this.$router.push(route);
         } else if (route.startsWith('#')) {
