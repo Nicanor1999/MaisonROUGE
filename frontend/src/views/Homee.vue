@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="heroSection">
+    <!-- <div class="heroSection">
       <video class="hero__video" autoplay muted loop playsinline preload="auto">
         <source src="@/assets/videos/c.mp4" type="video/mp4" />
       </video>
@@ -8,7 +8,7 @@
         <span>SCROLLEZ</span>
         <div class="scrollBar"></div>
       </div>
-    </div>
+    </div> -->
     <div class="firstSection">
       <div class="welcomePart">
         <div class="part1">
@@ -32,6 +32,7 @@
           </div>
         </div>
       </div>
+      <div class="bioPart">e</div>
     </div>
   </div>
 </template>
@@ -238,7 +239,7 @@ export default {
   width: 100%;
   position: relative;
   top: 20vh;
-  // background-color: darkcyan;
+  background-color: darkcyan;
   display: flex;
   justify-content: center;
 }
@@ -246,7 +247,7 @@ export default {
 .firstSection .welcomePart {
   height: 88vh;
   width: 90%;
-  // background-color: darkgoldenrod;
+  background-color: darkgoldenrod;
 }
 
 .firstSection .welcomePart .part1 {
@@ -351,6 +352,10 @@ export default {
   top: -10%;
   left: 12%;
   background-color: var(--bg-1);
+}
+
+.firstSection .bioPart{
+  
 }
 
 .font {
