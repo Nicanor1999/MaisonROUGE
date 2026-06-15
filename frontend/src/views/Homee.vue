@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <!-- <div class="heroSection">
+    <div class="heroSection">
       <video class="hero__video" autoplay muted loop playsinline preload="auto">
         <source src="@/assets/videos/c.mp4" type="video/mp4" />
       </video>
@@ -8,14 +8,21 @@
         <span>SCROLLEZ</span>
         <div class="scrollBar"></div>
       </div>
-    </div> -->
+    </div>
     <div class="firstSection">
       <div class="welcomePart">
         <div class="part1">
           <div class="subPart1 font">MAISON</div>
           <div class="subPart2">
             <div class="africa">
-              <video class="hero__video" autoplay muted loop playsinline preload="auto">
+              <video
+                class="hero__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+              >
                 <source src="@/assets/videos/c.mp4" type="video/mp4" />
               </video>
             </div>
@@ -32,7 +39,73 @@
           </div>
         </div>
       </div>
-      <div class="bioPart">e</div>
+      <div class="bioPart">
+        <div class="bio">
+          <p>
+            <span class="drop-cap">À</span> l’hôtel Maison Rouge Cotonou, on ne
+            s’occupe que de vous ! Vous organisez un voyage d’affaires à Cotonou
+            ou vous prévoyez des vacances auBénin ? Vous recherchez un hôtel de
+            luxe, central et insolite ? Venez découvrir l’hôtel Maison Rouge
+            Cotonou, l’adresse incontournable pour un séjour d’exception dans la
+            capitale économique du Bénin ! Vous serez accueilli chaleureusement
+            et vous profiterez de tous les services premium de notre hôtel 4
+            étoiles.
+          </p>
+        </div>
+        <div class="specialButton">
+          <!-- From Uiverse.io by Creatlydev -->
+          <button class="button">
+            <p class="button__text">
+              <span style="--index: 0">D</span>
+              <span style="--index: 1">É</span>
+              <span style="--index: 2">C</span>
+              <span style="--index: 3">O</span>
+              <span style="--index: 4">U</span>
+              <span style="--index: 5">V</span>
+              <span style="--index: 6">R</span>
+              <span style="--index: 7">I</span>
+              <span style="--index: 8">R</span>
+              <span style="--index: 9"> </span>
+              <span style="--index: 10">M.</span>
+              <span style="--index: 11">R</span>
+              <span style="--index: 12">O</span>
+              <span style="--index: 13">U</span>
+              <span style="--index: 14">G</span>
+              <span style="--index: 15">E</span>
+              <!-- <span style="--index: 16">E</span> -->
+              <!-- <span style="--index: 17">N</span> -->
+            </p>
+
+            <div class="button__circle">
+              <svg
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="button__icon"
+                width="14"
+              >
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+
+              <svg
+                viewBox="0 0 14 15"
+                fill="none"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+                class="button__icon button__icon--copy"
+              >
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -83,7 +156,7 @@ export default {
             end: "+=600",
             scrub,
             markers: false,
-            onEnter:()=>{
+            onEnter: () => {
               this.ui.isScrolling = true;
             },
             onLeave: () => {
@@ -94,12 +167,13 @@ export default {
               this.ui.isLeavingHero = false;
               this.animateBackSvg();
               this.ui.isScrolling = false;
-            }
-          }
+            },
+          },
         });
 
         // 1. Shrink and morph over 100% of the scroll duration (0.0 to 1.0)
-        tl.fromTo(".heroSection .hero__video",
+        tl.fromTo(
+          ".heroSection .hero__video",
           {
             width: "100vw",
             height: "100vh",
@@ -122,18 +196,19 @@ export default {
             webkitMaskSize: "100% 100%",
             maskSize: "100% 100%",
             duration: 1,
-            ease: "none"
-          }
+            ease: "none",
+          },
         );
 
         // 2. Smoothly fade out starting at 75% of the scroll timeline (0.75 to 1.0)
-        tl.to(".heroSection .hero__video",
+        tl.to(
+          ".heroSection .hero__video",
           {
             opacity: 0,
             duration: 0.01,
-            ease: "power1.out"
+            ease: "power1.out",
           },
-          0.99
+          0.99,
         );
 
         // gsap.to(this.$refs.arrow, {
@@ -167,8 +242,8 @@ export default {
         ease: "power2.inOut",
         delay: 0.3,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -180,7 +255,6 @@ export default {
   display: flex;
   flex-direction: column;
 }
-
 
 .heroSection {
   width: 100%;
@@ -239,15 +313,17 @@ export default {
   width: 100%;
   position: relative;
   top: 20vh;
-  background-color: darkcyan;
+  // background-color: darkcyan;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .firstSection .welcomePart {
   height: 88vh;
   width: 90%;
-  background-color: darkgoldenrod;
+  // background-color: darkgoldenrod;
 }
 
 .firstSection .welcomePart .part1 {
@@ -354,8 +430,38 @@ export default {
   background-color: var(--bg-1);
 }
 
-.firstSection .bioPart{
-  
+.firstSection .bioPart {
+  height: 40vh;
+  width: 90%;
+  // background-color: darkred;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.firstSection .bioPart .bio {
+  height: 100%;
+  width: 62%;
+  // background-color: cyan;
+    display: flex;
+  align-items: flex-end;
+}
+
+.firstSection .bioPart .bio p {
+  line-height: 1.6;
+  text-align: justify;
+  /*     margin-bottom: 1.5em; */
+  color: #7a2e2e;
+}
+
+.firstSection .bioPart .bio p .drop-cap {
+  float: left;
+  font-size: 5.6em; /* roughly 3 lines tall */
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.3rem;
+  // font-family: "Garamond", serif;
+  color: #7a2e2e;
 }
 
 .font {
@@ -364,4 +470,86 @@ export default {
   font-family: "Futura LT", sans-serif;
   // font-weight: ;
 }
+
+.specialButton{
+  // padding-left: 2rem;
+  position: absolute;
+  bottom: 0.8rem;
+  right: 5rem;
+}
+
+/* From Uiverse.io by Creatlydev */ 
+.specialButton .button {
+  cursor: pointer;
+  border: none;
+  background: var(--primary-variant);
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition:
+    background 300ms,
+    transform 200ms;
+  font-weight: 600;
+}
+
+.specialButton .button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+
+  > span {
+    position: absolute;
+    transform: rotate(calc(19deg * var(--index)));
+    inset: 7px;
+  }
+}
+
+.specialButton .button__circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--primary-variant);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialButton .button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.specialButton .button:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+}
+
+.specialButton .button:hover .button__icon {
+  color: var(--primary);
+}
+
+.specialButton .button:hover .button__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.specialButton .button:hover .button__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+@keyframes text-rotation {
+  to {
+    rotate: 360deg;
+  }
+}
+
 </style>
