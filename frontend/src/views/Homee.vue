@@ -107,6 +107,11 @@
         </div>
       </div>
     </div>
+    <div class="secondSection">
+      <div class="card">
+        <img src="@/assets/pictures/photo10.jpg" alt="">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -132,11 +137,12 @@ export default {
     this.initializeAnimation();
   },
   beforeUnmount() {
+    ScrollTrigger.clearScrollMemory();
+    gsap.killTweensOf(".africa");
     if (this.ctx) {
-      this.ctx.revert();
+      this.ctx.kill();
       this.ctx = null;
     }
-    ScrollTrigger.killAll();
   },
   methods: {
     initializeAnimation() {
@@ -313,6 +319,7 @@ export default {
   width: 100%;
   position: relative;
   top: 20vh;
+  margin-bottom: 70vh;
   // background-color: darkcyan;
   display: flex;
   justify-content: space-between;
@@ -443,7 +450,7 @@ export default {
   height: 100%;
   width: 62%;
   // background-color: cyan;
-    display: flex;
+  display: flex;
   align-items: flex-end;
 }
 
@@ -464,6 +471,35 @@ export default {
   color: #7a2e2e;
 }
 
+.secondSection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.secondSection .card {
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 1080 / 885; /* Matches photo10.jpg's exact proportions */
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.secondSection .card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills perfectly, no distortion */
+  display: block;
+}
+
 .font {
   font-size: 5rem;
   color: var(--primary);
@@ -471,14 +507,14 @@ export default {
   // font-weight: ;
 }
 
-.specialButton{
+.specialButton {
   // padding-left: 2rem;
   position: absolute;
   bottom: 0.8rem;
   right: 5rem;
 }
 
-/* From Uiverse.io by Creatlydev */ 
+/* From Uiverse.io by Creatlydev */
 .specialButton .button {
   cursor: pointer;
   border: none;
@@ -551,5 +587,4 @@ export default {
     rotate: 360deg;
   }
 }
-
 </style>

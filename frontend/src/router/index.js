@@ -62,10 +62,7 @@ router.beforeEach((to, from) => {
 })
 
 router.afterEach(() => {
-  const ui = useUiStore()
-  requestAnimationFrame(() => {
-    ui.hideLoader()
-  })
+  // Loader is managed by App.vue which waits for content to actually load
 })
 
 export default router;
