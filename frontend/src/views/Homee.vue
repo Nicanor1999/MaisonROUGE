@@ -109,7 +109,122 @@
     </div>
     <div class="secondSection">
       <div class="card">
-        <img src="@/assets/pictures/photo10.jpg" alt="">
+        <img src="@/assets/pictures/photo10.jpg" alt="" />
+        <div class="titleContainer">
+          <div class="title">CHAMBRES</div>
+          <div class="specialButton">
+            <!-- From Uiverse.io by Creatlydev -->
+            <button class="button">
+              <p class="button__text">
+                <span style="--index: 0">E</span>
+                <span style="--index: 1"></span>
+                <span style="--index: 2">N</span>
+                <span style="--index: 3"></span>
+                <span style="--index: 4">T</span>
+                <span style="--index: 5"></span>
+                <span style="--index: 6">R</span>
+                <span style="--index: 7"></span>
+                <span style="--index: 8">E</span>
+                <span style="--index: 9"></span>
+                <span style="--index: 10">R</span>
+                <span style="--index: 11"></span>
+                <span style="--index: 12"></span>
+                <span style="--index: 13"></span>
+                <span style="--index: 14"></span>
+                <span style="--index: 15"></span>
+                <!-- <span style="--index: 16">E</span> -->
+                <!-- <span style="--index: 17">N</span> -->
+              </p>
+
+              <div class="button__circle">
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon"
+                  width="14"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon button__icon--copy"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card secondCard">
+        <img src="@/assets/pictures/photo12.jpg" alt="" />
+        <div class="titleContainer">
+          <div class="title">SUITES</div>
+          <div class="specialButton">
+            <!-- From Uiverse.io by Creatlydev -->
+            <button class="button">
+              <p class="button__text">
+                <span style="--index: 0">E</span>
+                <span style="--index: 1"></span>
+                <span style="--index: 2">N</span>
+                <span style="--index: 3"></span>
+                <span style="--index: 4">T</span>
+                <span style="--index: 5"></span>
+                <span style="--index: 6">R</span>
+                <span style="--index: 7"></span>
+                <span style="--index: 8">E</span>
+                <span style="--index: 9"></span>
+                <span style="--index: 10">R</span>
+                <span style="--index: 11"></span>
+                <span style="--index: 12"></span>
+                <span style="--index: 13"></span>
+                <span style="--index: 14"></span>
+                <span style="--index: 15"></span>
+                <!-- <span style="--index: 16">E</span> -->
+                <!-- <span style="--index: 17">N</span> -->
+              </p>
+
+              <div class="button__circle">
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon"
+                  width="14"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon button__icon--copy"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -472,22 +587,48 @@ export default {
 }
 
 .secondSection {
-  min-height: 100vh;
+  height: 200vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  justify-content: space-between;
+  // padding: 2rem;
+  // position: relative;
 }
 
 .secondSection .card {
-  width: 90%;
-  max-width: 1200px;
-  aspect-ratio: 1080 / 885; /* Matches photo10.jpg's exact proportions */
-  position: relative;
+  width: 100%;
+  height: 50%;
+  // background-color: #7a2e2e;
+  // max-width: 1200px;
+  // aspect-ratio: 1080 / 885; /* Matches photo10.jpg's exact proportions */
+  // position: absolute;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.secondSection .secondCard{
+  position: sticky;
+  z-index: 2;
+}
+
+
+
+.secondSection .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(62, 20, 20, 0.75) 0%,
+    rgba(62, 20, 20, 0) 60%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .secondSection .card img {
@@ -497,7 +638,41 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Fills perfectly, no distortion */
+  // display: block;
+  object-position: center;
+}
+
+.secondSection .card .titleContainer {
+  height: auto;
+  width: auto;
+  position: absolute;
+  bottom: 12%;
+  left: 8%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1rem;
+  background: transparent;
+}
+
+.secondSection .card .titleContainer .title {
+  font-size: 4rem;
+  color: #f5f0e8;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: "Futura LT", sans-serif;
+  font-weight: 300;
+  position: relative;
+}
+
+.secondSection .card .titleContainer .title::after {
+  content: "";
   display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary);
+  margin-top: 1rem;
 }
 
 .font {
@@ -507,7 +682,7 @@ export default {
   // font-weight: ;
 }
 
-.specialButton {
+.bioPart .specialButton {
   // padding-left: 2rem;
   position: absolute;
   bottom: 0.8rem;
@@ -515,7 +690,7 @@ export default {
 }
 
 /* From Uiverse.io by Creatlydev */
-.specialButton .button {
+.bioPart .specialButton .button {
   cursor: pointer;
   border: none;
   background: var(--primary-variant);
@@ -533,7 +708,7 @@ export default {
   font-weight: 600;
 }
 
-.specialButton .button__text {
+.bioPart .specialButton .button__text {
   position: absolute;
   inset: 0;
   animation: text-rotation 8s linear infinite;
@@ -545,7 +720,7 @@ export default {
   }
 }
 
-.specialButton .button__circle {
+.bioPart .specialButton .button__circle {
   position: relative;
   width: 40px;
   height: 40px;
@@ -558,26 +733,107 @@ export default {
   justify-content: center;
 }
 
-.specialButton .button__icon--copy {
+.bioPart .specialButton .button__icon--copy {
   position: absolute;
   transform: translate(-150%, 150%);
 }
 
-.specialButton .button:hover {
+.bioPart .specialButton .button:hover {
   background: var(--primary);
   transform: scale(1.05);
 }
 
-.specialButton .button:hover .button__icon {
+.bioPart .specialButton .button:hover .button__icon {
   color: var(--primary);
 }
 
-.specialButton .button:hover .button__icon:first-child {
+.bioPart .specialButton .button:hover .button__icon:first-child {
   transition: transform 0.3s ease-in-out;
   transform: translate(150%, -150%);
 }
 
-.specialButton .button:hover .button__icon--copy {
+.bioPart .specialButton .button:hover .button__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+@keyframes text-rotation {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.titleContainer .specialButton {
+  // padding-left: 2rem;
+  // position: absolute;
+  // bottom: 1.5rem;
+  // right: 5rem;
+}
+
+/* From Uiverse.io by Creatlydev */
+.titleContainer .specialButton .button {
+  cursor: pointer;
+  border: none;
+  background: var(--primary-variant);
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition:
+    background 300ms,
+    transform 200ms;
+  font-weight: 600;
+}
+
+.titleContainer .specialButton .button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+
+  > span {
+    position: absolute;
+    transform: rotate(calc(19deg * var(--index)));
+    inset: 7px;
+  }
+}
+
+.titleContainer .specialButton .button__circle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--primary-variant);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleContainer .specialButton .button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.titleContainer .specialButton .button:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+}
+
+.titleContainer .specialButton .button:hover .button__icon {
+  color: var(--primary);
+}
+
+.titleContainer .specialButton .button:hover .button__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.titleContainer .specialButton .button:hover .button__icon--copy {
   transition: transform 0.3s ease-in-out 0.1s;
   transform: translate(0);
 }
