@@ -4,7 +4,7 @@
       <video class="hero__video" autoplay muted loop playsinline preload="auto">
         <source src="@/assets/videos/c.mp4" type="video/mp4" />
       </video>
-      <div v-if="!ui.isLeavingHero" class="scroll">
+      <div v-if="!ui.isScrolling" class="scroll">
         <span>SCROLLEZ</span>
         <div class="scrollBar"></div>
       </div>
@@ -108,7 +108,7 @@
       </div>
     </div>
     <div class="secondSection">
-      <div class="card">
+      <div class="card firstCard">
         <img src="@/assets/pictures/photo10.jpg" alt="" />
         <div class="titleContainer">
           <div class="title">CHAMBRES</div>
@@ -226,6 +226,121 @@
           </div>
         </div>
       </div>
+      <div class="card thirdCard">
+        <img src="@/assets/pictures/photo13.jpg" alt="" />
+        <div class="titleContainer">
+          <div class="title">SERVICES</div>
+          <div class="specialButton">
+            <!-- From Uiverse.io by Creatlydev -->
+            <button class="button">
+              <p class="button__text">
+                <span style="--index: 0">E</span>
+                <span style="--index: 1"></span>
+                <span style="--index: 2">N</span>
+                <span style="--index: 3"></span>
+                <span style="--index: 4">T</span>
+                <span style="--index: 5"></span>
+                <span style="--index: 6">R</span>
+                <span style="--index: 7"></span>
+                <span style="--index: 8">E</span>
+                <span style="--index: 9"></span>
+                <span style="--index: 10">R</span>
+                <span style="--index: 11"></span>
+                <span style="--index: 12"></span>
+                <span style="--index: 13"></span>
+                <span style="--index: 14"></span>
+                <span style="--index: 15"></span>
+                <!-- <span style="--index: 16">E</span> -->
+                <!-- <span style="--index: 17">N</span> -->
+              </p>
+
+              <div class="button__circle">
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon"
+                  width="14"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon button__icon--copy"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat enim
+      optio modi aliquid laudantium repellat quas nesciunt, nam ab consequatur
+      beatae eos numquam aliquam magnam consequuntur minima sequi! Sed, error
+      velit? Vitae maxime quibusdam molestias, earum dolor vel enim porro
+      eveniet animi, quisquam tempore fugiat aliquam libero, pariatur numquam
+      reprehenderit cum corporis minima perferendis reiciendis facere
+      distinctio! Saepe dicta tempora maxime rerum consectetur similique
+      officiis, hic ea delectus ducimus ratione quia vel, impedit velit quos
+      quis voluptatibus! Eaque, asperiores! Reprehenderit quo aliquid tempora
+      ducimus perspiciatis repellat eum quibusdam, ipsa inventore laboriosam,
+      ipsam maiores quidem harum! Aspernatur quidem iusto commodi mollitia unde
+      quae eligendi, ratione rerum eaque quisquam, voluptatem cum accusamus ut
+      error provident quos. Commodi delectus similique voluptas voluptates, quos
+      earum atque culpa nulla minima deleniti porro, dolor cumque ea? Aliquid
+      illo architecto tempora impedit molestias, doloribus, sunt porro eum
+      fugiat possimus, sed iure distinctio error id dolore. Dolores eum itaque
+      odio provident quisquam in amet perspiciatis possimus, facilis adipisci
+      accusamus libero nihil ipsa mollitia? Nisi fugiat animi possimus nesciunt
+      reprehenderit! Fugit odit, officiis consequuntur officia sequi magni ad
+      totam deserunt repudiandae assumenda, unde obcaecati quas quia, id culpa!
+      Adipisci optio praesentium beatae sunt placeat, architecto dolorum et vel
+      doloribus ipsam, reprehenderit commodi dolorem eos quaerat, sequi dolore
+      modi ipsum cupiditate quis enim laudantium officia neque voluptatem. Quod
+      ipsam quisquam libero sapiente architecto non, expedita rerum iusto
+      reprehenderit labore enim, perferendis repellendus dignissimos consectetur
+      autem illo provident voluptatibus tempora assumenda, exercitationem quis
+      atque neque fuga! Ex enim eaque dolorum cupiditate repellat, aspernatur
+      laborum, sit dicta id facere saepe corrupti tempora atque nulla
+      repudiandae culpa ratione laboriosam laudantium vel iusto. Beatae et quod
+      voluptas accusamus rerum aliquam maxime rem eum molestias ex, voluptatem
+      earum fuga obcaecati sunt laborum reiciendis sit? Odio iste tempore
+      architecto accusamus asperiores quia eligendi culpa praesentium porro
+      necessitatibus exercitationem vero, blanditiis deleniti fugit optio. Atque
+      ullam, animi impedit exercitationem ab fuga explicabo officiis quia,
+      aliquam nesciunt ut sed esse dignissimos iusto. Doloribus ex harum
+      consequatur quidem optio dolorem tempora sint cum sit voluptatum ab in
+      vero, voluptatem earum nulla libero quasi eos. Modi error necessitatibus
+      dolores dignissimos tempora, non minima tempore porro illo distinctio sunt
+      odio nobis, natus exercitationem eius quaerat esse quod, blanditiis
+      placeat! Voluptate tenetur fugiat perspiciatis dicta, sit tempora cumque
+      eaque eligendi non, recusandae consequatur hic iure! Nihil consectetur
+      ullam quisquam eos, consequatur, facilis praesentium deleniti beatae
+      doloremque suscipit nam nostrum officia. Culpa reiciendis eligendi
+      assumenda adipisci officia ex quas unde, magni quae possimus itaque
+      beatae, ratione libero ad aliquam odit laudantium sit incidunt rem harum
+      facilis debitis vero, cum voluptatem. Nihil, voluptatem suscipit. Iste
+      magni, nesciunt dignissimos, quae odit ducimus excepturi perferendis
+      labore libero vero minima veritatis facere optio? Recusandae ducimus
+      eligendi officiis voluptatibus nostrum error labore, a repellat
+      praesentium beatae id eveniet aperiam, dignissimos ratione molestiae
+      debitis. Facere, ratione odit ut quaerat voluptatem quia in ipsum incidunt
+      saepe neque expedita similique id, iure sint nam unde nulla, itaque
+      sapiente mollitia nesciunt hic dolorem officia. Est, ea velit? Accusantium
+      velit odit distinctio laboriosam?
     </div>
   </div>
 </template>
@@ -254,6 +369,14 @@ export default {
   beforeUnmount() {
     ScrollTrigger.clearScrollMemory();
     gsap.killTweensOf(".africa");
+    gsap.killTweensOf(".navBar");
+
+    const navbar = document.querySelector(".navBar");
+    if (navbar) {
+      navbar.removeEventListener("mouseenter", this.handleNavbarMouseEnter);
+      navbar.removeEventListener("mouseleave", this.handleNavbarMouseLeave);
+    }
+
     if (this.ctx) {
       this.ctx.kill();
       this.ctx = null;
@@ -332,17 +455,43 @@ export default {
           0.99,
         );
 
-        // gsap.to(this.$refs.arrow, {
-        //   opacity: 0,
-
-        //   scrollTrigger: {
-        //     trigger: this.$refs.primarySection,
-        //     start: "top top",
-        //     end: "+=200",
-        //     scrub,
-        //   },
-        // });
+        // Animation navbar translucide au scroll
+        gsap.to(".navBar", {
+          opacity: 0.05,
+          scrollTrigger: {
+            trigger: ".secondSection",
+            start: "top 20%",
+            end: "bottom bottom",
+            scrub: 0.2,
+            // markers: true,
+            onLeave: () => {
+              // Réapparaît en quittant .thirdCard
+              gsap.to(".navBar", { opacity: 1, duration: 0.3 });
+            },
+            onEnterBack: () => {
+              gsap.to(".navBar", { opacity: 0.05, duration: 0.3 });
+            },
+          },
+        });
       });
+
+      // Event listeners pour hover sur la navbar
+      const navbar = document.querySelector(".navBar");
+      if (navbar) {
+        navbar.addEventListener("mouseenter", () => {
+          gsap.to(".navBar", { opacity: 1, duration: 0.3 });
+        });
+        navbar.addEventListener("mouseleave", () => {
+          const firstSection = document.querySelector(".firstSection");
+          if (
+            firstSection &&
+            window.scrollY >
+              firstSection.offsetTop + firstSection.offsetHeight * 0.2
+          ) {
+            gsap.to(".navBar", { opacity: 0.15, duration: 0.3 });
+          }
+        });
+      }
     },
     animateSvg() {
       if (!this.ui.isLeavingHero) return;
@@ -426,8 +575,15 @@ export default {
 .heroSection .scroll .scrollBar {
   width: 0.08rem;
   height: 80%;
-  background-color: white;
-}
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      animation: scrollline 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollline {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+    }
 
 .firstSection {
   height: 138vh;
@@ -587,7 +743,7 @@ export default {
 }
 
 .secondSection {
-  height: 200vh;
+  height: 300vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -599,7 +755,7 @@ export default {
 
 .secondSection .card {
   width: 100%;
-  height: 50%;
+  height: 33.33%;
   // background-color: #7a2e2e;
   // max-width: 1200px;
   // aspect-ratio: 1080 / 885; /* Matches photo10.jpg's exact proportions */
@@ -607,16 +763,21 @@ export default {
   display: flex;
   align-items: center;
   overflow: hidden;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
 }
 
-.secondSection .secondCard{
+.secondSection .secondCard {
   position: sticky;
+  top: 0;
   z-index: 2;
 }
 
-
+.secondSection .thirdCard {
+  position: relative;
+  z-index: 3;
+}
 
 .secondSection .card::after {
   content: "";

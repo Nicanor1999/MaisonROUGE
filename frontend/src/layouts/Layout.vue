@@ -75,7 +75,7 @@ export default {
 
 .NavbarComponent {
   position: fixed;
-  z-index: 3;
+  z-index: 99;
 }
 
 .main-content {
