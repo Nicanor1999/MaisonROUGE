@@ -4,7 +4,7 @@ import { useUiStore } from '@/stores/ui'
 import Layout from '@/layouts/Layout.vue'
 // import HomeView from '@/views/Home.vue'
 import HomeeView from '@/views/Homee.vue'
-import AccomodationView from '@/views/Accomodation.vue'
+import RoomsView from '@/views/Rooms.vue'
 
 
 const routes = [
@@ -19,9 +19,9 @@ const routes = [
                 component: HomeeView
             },
             {
-                path: '/accomodation',
-                name: 'AccomodationView',
-                component: AccomodationView
+                path: '/rooms',
+                name: 'RoomsView',
+                component: RoomsView
             }
         ]
     },

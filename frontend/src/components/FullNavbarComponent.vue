@@ -24,7 +24,7 @@
           <div class="nav">
             <ul>
               <li><a href="" class="primary-light" @mouseenter="activeIndex = 0" @click.prevent="handleLinkClick('/')">Accueil</a></li>
-              <li><a href="" class="primary-light" @mouseenter="activeIndex = 1" @click.prevent="handleLinkClick('/accomodation')">Hébergement</a></li>
+              <li><a href="" class="primary-light" @mouseenter="activeIndex = 1" @click.prevent="handleLinkClick('/rooms')">Chambres</a></li>
               <li><a href="" class="primary-light" @mouseenter="activeIndex = 2" @click.prevent="handleLinkClick('/restaurant')">Restaurant</a></li>
               <li><a href="" class="primary-light" @mouseenter="activeIndex = 3" @click.prevent="handleLinkClick('/services')">Services</a></li>
               <li><a href="" class="primary-light" @mouseenter="activeIndex = 4" @click.prevent="handleLinkClick('/expositions')">Expositions</a></li>
