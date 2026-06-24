@@ -103,6 +103,7 @@ body {
   font-family: "Quattrocento", serif;
   color: var(--text-color);
   overflow-x: hidden;
+  /* scroll-behavior: smooth; */
   /* font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

@@ -55,6 +55,11 @@
 import { Vue3Lottie } from "vue3-lottie";
 import loaderAnimation from "@/assets/Loading circles.json";
 import { useUiStore } from "@/stores/ui";
+import Lenis from "lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "App",
@@ -67,6 +72,7 @@ export default {
       loaderAnimation,
       unwatchRoute: null,
       isMobile: false,
+      lenis: null,
     };
   },
   mounted() {
@@ -77,6 +83,22 @@ export default {
     window.addEventListener("resize", this.detectMobile);
 
     if (!this.isMobile) {
+      // Initialize Lenis smooth scrolling
+      this.lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+        smoothWheel: true,
+      });
+
+      // Sync Lenis with ScrollTrigger
+      this.lenis.on("scroll", ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        this.lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+
       // Show loader on initial page load
       this.ui.showLoader();
       this.$nextTick(() => {
@@ -98,6 +120,13 @@ export default {
     window.removeEventListener("resize", this.detectMobile);
     if (this.unwatchRoute) {
       this.unwatchRoute();
+    }
+    // Cleanup Lenis
+    if (this.lenis) {
+      this.lenis.destroy();
+      gsap.ticker.remove((time) => {
+        this.lenis.raf(time * 1000);
+      });
     }
   },
   methods: {
@@ -270,7 +299,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--bg-hidden);
+  background-color: var(--bg-1);
   display: flex;
   align-items: center;
   justify-content: center;
