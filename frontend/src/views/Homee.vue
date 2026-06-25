@@ -106,7 +106,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div>1 
     <div class="secondSection">
       <div class="card firstCard">
         <img src="@/assets/pictures/photo10.jpg" alt="" />
@@ -286,61 +286,14 @@
         </div>
       </div>
     </div>
-    <div>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat enim
-      optio modi aliquid laudantium repellat quas nesciunt, nam ab consequatur
-      beatae eos numquam aliquam magnam consequuntur minima sequi! Sed, error
-      velit? Vitae maxime quibusdam molestias, earum dolor vel enim porro
-      eveniet animi, quisquam tempore fugiat aliquam libero, pariatur numquam
-      reprehenderit cum corporis minima perferendis reiciendis facere
-      distinctio! Saepe dicta tempora maxime rerum consectetur similique
-      officiis, hic ea delectus ducimus ratione quia vel, impedit velit quos
-      quis voluptatibus! Eaque, asperiores! Reprehenderit quo aliquid tempora
-      ducimus perspiciatis repellat eum quibusdam, ipsa inventore laboriosam,
-      ipsam maiores quidem harum! Aspernatur quidem iusto commodi mollitia unde
-      quae eligendi, ratione rerum eaque quisquam, voluptatem cum accusamus ut
-      error provident quos. Commodi delectus similique voluptas voluptates, quos
-      earum atque culpa nulla minima deleniti porro, dolor cumque ea? Aliquid
-      illo architecto tempora impedit molestias, doloribus, sunt porro eum
-      fugiat possimus, sed iure distinctio error id dolore. Dolores eum itaque
-      odio provident quisquam in amet perspiciatis possimus, facilis adipisci
-      accusamus libero nihil ipsa mollitia? Nisi fugiat animi possimus nesciunt
-      reprehenderit! Fugit odit, officiis consequuntur officia sequi magni ad
-      totam deserunt repudiandae assumenda, unde obcaecati quas quia, id culpa!
-      Adipisci optio praesentium beatae sunt placeat, architecto dolorum et vel
-      doloribus ipsam, reprehenderit commodi dolorem eos quaerat, sequi dolore
-      modi ipsum cupiditate quis enim laudantium officia neque voluptatem. Quod
-      ipsam quisquam libero sapiente architecto non, expedita rerum iusto
-      reprehenderit labore enim, perferendis repellendus dignissimos consectetur
-      autem illo provident voluptatibus tempora assumenda, exercitationem quis
-      atque neque fuga! Ex enim eaque dolorum cupiditate repellat, aspernatur
-      laborum, sit dicta id facere saepe corrupti tempora atque nulla
-      repudiandae culpa ratione laboriosam laudantium vel iusto. Beatae et quod
-      voluptas accusamus rerum aliquam maxime rem eum molestias ex, voluptatem
-      earum fuga obcaecati sunt laborum reiciendis sit? Odio iste tempore
-      architecto accusamus asperiores quia eligendi culpa praesentium porro
-      necessitatibus exercitationem vero, blanditiis deleniti fugit optio. Atque
-      ullam, animi impedit exercitationem ab fuga explicabo officiis quia,
-      aliquam nesciunt ut sed esse dignissimos iusto. Doloribus ex harum
-      consequatur quidem optio dolorem tempora sint cum sit voluptatum ab in
-      vero, voluptatem earum nulla libero quasi eos. Modi error necessitatibus
-      dolores dignissimos tempora, non minima tempore porro illo distinctio sunt
-      odio nobis, natus exercitationem eius quaerat esse quod, blanditiis
-      placeat! Voluptate tenetur fugiat perspiciatis dicta, sit tempora cumque
-      eaque eligendi non, recusandae consequatur hic iure! Nihil consectetur
-      ullam quisquam eos, consequatur, facilis praesentium deleniti beatae
-      doloremque suscipit nam nostrum officia. Culpa reiciendis eligendi
-      assumenda adipisci officia ex quas unde, magni quae possimus itaque
-      beatae, ratione libero ad aliquam odit laudantium sit incidunt rem harum
-      facilis debitis vero, cum voluptatem. Nihil, voluptatem suscipit. Iste
-      magni, nesciunt dignissimos, quae odit ducimus excepturi perferendis
-      labore libero vero minima veritatis facere optio? Recusandae ducimus
-      eligendi officiis voluptatibus nostrum error labore, a repellat
-      praesentium beatae id eveniet aperiam, dignissimos ratione molestiae
-      debitis. Facere, ratione odit ut quaerat voluptatem quia in ipsum incidunt
-      saepe neque expedita similique id, iure sint nam unde nulla, itaque
-      sapiente mollitia nesciunt hic dolorem officia. Est, ea velit? Accusantium
-      velit odit distinctio laboriosam?
+    <div class="thirdSection">
+      <div class="grid">
+        <div class="grid1"></div>
+        <div class="grid2"></div>
+        <div class="grid3"></div>
+        <div class="grid4"></div>
+        <div class="grid5"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -834,6 +787,22 @@ export default {
   height: 2px;
   background-color: var(--primary);
   margin-top: 1rem;
+}
+
+.thirdSection {
+  background-color: teal;
+  height: 90vh;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.thirdSection .grid{
+  height: 100%;
+  width: calc(100% - 70px);
+  background-color: aqua;
 }
 
 .font {
