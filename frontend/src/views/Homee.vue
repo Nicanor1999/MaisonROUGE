@@ -106,7 +106,7 @@
           </button>
         </div>
       </div>
-    </div>1 
+    </div>
     <div class="secondSection">
       <div class="card firstCard">
         <img src="@/assets/pictures/photo10.jpg" alt="" />
@@ -288,11 +288,21 @@
     </div>
     <div class="thirdSection">
       <div class="grid">
-        <div class="grid1"></div>
-        <div class="grid2"></div>
-        <div class="grid3"></div>
-        <div class="grid4"></div>
-        <div class="grid5"></div>
+        <div class="grid1">
+          <span>CUISINE GASTRONOMIQUE</span>
+        </div>
+        <div class="grid2">
+          <img src="@/assets/pictures/photo14.jpg" alt="" />
+        </div>
+        <div class="grid3">
+          <img src="@/assets/pictures/photo16.jpg" alt="" />
+        </div>
+        <div class="grid4">
+          <img src="@/assets/pictures/photo15.jpg" alt="" />
+        </div>
+        <div class="grid5">
+          <span>CUISINE GASTRONOMIQUE</span>
+        </div>
       </div>
     </div>
   </div>
@@ -528,15 +538,27 @@ export default {
 .heroSection .scroll .scrollBar {
   width: 0.08rem;
   height: 80%;
-      background: linear-gradient(to bottom, transparent, #ffffff);
-      animation: scrollline 1.8s ease-in-out infinite;
-    }
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  animation: scrollline 1.8s ease-in-out infinite;
+}
 
-    @keyframes scrollline {
-      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
-      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
-      100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
-    }
+@keyframes scrollline {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
 
 .firstSection {
   height: 138vh;
@@ -792,17 +814,90 @@ export default {
 .thirdSection {
   background-color: teal;
   height: 90vh;
-  width:100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 20vh;
   margin-bottom: 20vh;
 }
 
-.thirdSection .grid{
+.thirdSection .grid {
   height: 100%;
   width: calc(100% - 70px);
   background-color: aqua;
+  //   height: 100%;
+  // width: 50%;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows: 2fr 2fr;
+  grid-gap: 5rem;
+}
+
+.thirdSection .grid .grid1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  border: 1px solid red;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.thirdSection .grid .grid1 span {
+  font-size: 2.5rem;
+  text-align: start;
+  color: var(--primary);
+  font-family: "Futura LT", sans-serif;
+}
+
+.thirdSection .grid .grid2 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border: 1px solid black;
+  // background-image: url(@/assets/pictures/photo14.jpg);
+  // background-attachment: fixed;
+  // background-position: 100% 10%;
+  // background-size: 1400px 825px;
+  // background-repeat: no-repeat;
+}
+
+.thirdSection .grid .grid2 img {
+  width: 100%;
+  height: 100%;
+}
+
+.thirdSection .grid .grid3 {
+  grid-column: 2/3;
+  grid-row: 1/3;
+  border: 1px solid purple;
+}
+
+.thirdSection .grid .grid3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thirdSection .grid .grid4 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  border: 1px solid pink;
+}
+
+.thirdSection .grid .grid4 img {
+  width: 100%;
+  height: 100%;
+}
+
+.thirdSection .grid .grid5 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  border: 1px solid green;
+}
+
+.thirdSection .grid .grid5 span {
+  font-size: 2.5rem;
+  text-align: start;
+  color: var(--primary);
+  font-family: "Futura LT", sans-serif;
 }
 
 .font {
