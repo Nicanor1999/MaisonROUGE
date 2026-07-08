@@ -301,7 +301,60 @@
           <img src="@/assets/pictures/photo15.jpg" alt="" />
         </div>
         <div class="grid5">
-          <span>CUISINE GASTRONOMIQUE</span>
+          <span class="span">REGALEZ <br> VOS PAPILLES</span>
+          <div class="specialButton">
+            <!-- From Uiverse.io by Creatlydev -->
+            <button class="button">
+              <p class="button__text">
+                <span style="--index: 0">E</span>
+                <span style="--index: 1"></span>
+                <span style="--index: 2">N</span>
+                <span style="--index: 3"></span>
+                <span style="--index: 4">T</span>
+                <span style="--index: 5"></span>
+                <span style="--index: 6">R</span>
+                <span style="--index: 7"></span>
+                <span style="--index: 8">E</span>
+                <span style="--index: 9"></span>
+                <span style="--index: 10">R</span>
+                <span style="--index: 11"></span>
+                <span style="--index: 12"></span>
+                <span style="--index: 13"></span>
+                <span style="--index: 14"></span>
+                <span style="--index: 15"></span>
+                <!-- <span style="--index: 16">E</span> -->
+                <!-- <span style="--index: 17">N</span> -->
+              </p>
+
+              <div class="button__circle">
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon"
+                  width="14"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="button__icon button__icon--copy"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -812,7 +865,7 @@ export default {
 }
 
 .thirdSection {
-  background-color: teal;
+  // background-color: teal;
   height: 90vh;
   width: 100%;
   display: flex;
@@ -824,19 +877,19 @@ export default {
 .thirdSection .grid {
   height: 100%;
   width: calc(100% - 70px);
-  background-color: aqua;
+  // background-color: aqua;
   //   height: 100%;
   // width: 50%;
   display: grid;
   grid-template-columns: 3fr 3fr 3fr;
   grid-template-rows: 2fr 2fr;
-  grid-gap: 5rem;
+  grid-gap: 4rem;
 }
 
 .thirdSection .grid .grid1 {
   grid-column: 1/2;
   grid-row: 1/2;
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   justify-content: flex-start;
 }
@@ -851,7 +904,7 @@ export default {
 .thirdSection .grid .grid2 {
   grid-column: 1/2;
   grid-row: 2/3;
-  border: 1px solid black;
+  // border: 1px solid black;
   // background-image: url(@/assets/pictures/photo14.jpg);
   // background-attachment: fixed;
   // background-position: 100% 10%;
@@ -867,7 +920,7 @@ export default {
 .thirdSection .grid .grid3 {
   grid-column: 2/3;
   grid-row: 1/3;
-  border: 1px solid purple;
+  // border: 1px solid purple;
 }
 
 .thirdSection .grid .grid3 img {
@@ -879,7 +932,7 @@ export default {
 .thirdSection .grid .grid4 {
   grid-column: 3/4;
   grid-row: 1/2;
-  border: 1px solid pink;
+  // border: 1px solid pink;
 }
 
 .thirdSection .grid .grid4 img {
@@ -890,10 +943,14 @@ export default {
 .thirdSection .grid .grid5 {
   grid-column: 3/4;
   grid-row: 2/3;
-  border: 1px solid green;
+  // border: 1px solid green;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-.thirdSection .grid .grid5 span {
+.thirdSection .grid .grid5 .span {
   font-size: 2.5rem;
   text-align: start;
   color: var(--primary);
@@ -1068,4 +1125,125 @@ export default {
     rotate: 360deg;
   }
 }
+
+.titleContainer .specialButton {
+  // padding-left: 2rem;
+  // position: absolute;
+  // bottom: 1.5rem;
+  // right: 5rem;
+}
+
+/* From Uiverse.io by Creatlydev */
+.titleContainer .specialButton .button {
+  cursor: pointer;
+  border: none;
+  background: var(--primary-variant);
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition:
+    background 300ms,
+    transform 200ms;
+  font-weight: 600;
+}
+
+.titleContainer .specialButton .button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+
+  > span {
+    position: absolute;
+    transform: rotate(calc(19deg * var(--index)));
+    inset: 7px;
+  }
+}
+
+.grid5 .specialButton .button__circle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--primary-variant);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid5 .specialButton .button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.grid5 .specialButton .button:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+}
+
+.grid5 .specialButton .button:hover .button__icon {
+  color: var(--primary);
+}
+
+.grid5 .specialButton .button:hover .button__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.grid5 .specialButton .button:hover .button__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+@keyframes text-rotation {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.grid5 .specialButton {
+  // padding-left: 2rem;
+  // position: absolute;
+  // bottom: 1.5rem;
+  // right: 5rem;
+}
+
+/* From Uiverse.io by Creatlydev */
+.grid5 .specialButton .button {
+  cursor: pointer;
+  border: none;
+  background: var(--primary-variant);
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition:
+    background 300ms,
+    transform 200ms;
+  font-weight: 600;
+}
+
+.grid5 .specialButton .button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+
+  > span {
+    position: absolute;
+    transform: rotate(calc(19deg * var(--index)));
+    inset: 7px;
+  }
+}
+
+
 </style>
