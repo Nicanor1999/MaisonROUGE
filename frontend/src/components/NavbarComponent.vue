@@ -101,12 +101,20 @@ export default {
       color: var(--primary);
     }
 
+    .bookButton:hover span {
+      color: white;
+    }
+
     .menu-icon {
       color: var(--primary);
     }
 
     .bookButton .buttonCircle {
       background-color: var(--primary-variant);
+    }
+
+    .bookButton:hover .buttonCircle {
+      background-color: var(--primary);
     }
   }
 }

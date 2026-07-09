@@ -1,10 +1,8 @@
 <template>
   <div class="roomsContainer">
     <!-- Hero Section -->
-    <div
-      class="heroSection"
-    >
-      <img src="@/assets/pictures/photo5.jpg" alt="">
+    <div class="heroSection">
+      <img src="@/assets/pictures/photo5.jpg" alt="" />
       <!-- <div class="heroContent">
         <h1 class="heroTitle">Hébergement</h1>
         <p class="heroSubtitle">Un havre de paix et d'élégance</p>
@@ -22,19 +20,17 @@
         <h2 class="sectionTitle">L'Art de Vivre à la Maison Rouge</h2>
         <div class="divider"></div>
         <p class="descriptionParagraph">
-          Découvrez nos chambres et suites conçues pour vous offrir un confort
-          absolu et une expérience inoubliable au cœur de Cotonou. Alliant
-          design moderne et touches artistiques locales, chaque espace est pensé
-          comme un sanctuaire de sérénité. Que vous soyez en voyage d'affaires
-          ou en séjour de détente, Maison Rouge vous propose un cadre raffiné et
-          un service attentionné et personnalisé.
+          Découvrez nos chambres où confort absolu, design moderne et
+          touches artistiques locales se rencontrent pour créer un cadre
+          raffiné. Que vous soyez en voyage d'affaires ou en séjour de détente,
+          profitez d'une expérience unique au cœur de Cotonou.
         </p>
-        <p class="descriptionParagraph">
-          Chaque chambre dispose d'équipements de premier choix, d'une literie
-          d'exception, d'une connexion Wi-Fi haut débit et d'une vue imprenable
-          sur nos jardins ou notre piscine. Laissez-vous séduire par l'élégance
-          de notre architecture et le calme de nos espaces propices au repos.
-        </p>
+        <div class="options">
+          <ul>
+            <li>CHAMBRES CLASSIQUES</li>
+            <li>CHAMBRES SUPERIEURES</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -66,38 +62,43 @@ export default {
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  color: white;
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  z-index: 1;
 
-  .heroContent {
-    z-index: 2;
-    padding: 0 1rem;
-    animation: fadeInUp 1s ease-out;
+  // .heroContent {
+  //   z-index: 2;
+  //   padding: 0 1rem;
+  //   animation: fadeInUp 1s ease-out;
 
-    .heroTitle {
-      font-family: "Futura LT", sans-serif;
-      font-size: 5rem;
-      color: var(--primary);
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
+  //   .heroTitle {
+  //     font-family: "Futura LT", sans-serif;
+  //     font-size: 5rem;
+  //     color: var(--primary);
+  //     margin: 0;
+  //     text-transform: uppercase;
+  //     letter-spacing: 0.2rem;
+  //     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  //   }
 
-    .heroSubtitle {
-      font-family: "Quattrocento Sans", sans-serif;
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      font-weight: 300;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    }
+  //   .heroSubtitle {
+  //     font-family: "Quattrocento Sans", sans-serif;
+  //     font-size: 1.5rem;
+  //     margin-top: 1rem;
+  //     font-weight: 300;
+  //     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  //   }
+  // }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .scroll {
@@ -125,18 +126,32 @@ export default {
   }
 }
 
-    @keyframes scrollline {
-      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
-      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
-      100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
-    }
+@keyframes scrollline {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
 
 .contentSection {
   width: 100%;
-  padding: 8rem 0;
+  height: 40vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
   display: flex;
   justify-content: center;
-  background-color: var(--bg-1);
+  background-color: var(--primary-variant);
 
   .contentWrapper {
     width: 60%;
@@ -148,10 +163,10 @@ export default {
 
     .sectionTitle {
       font-family: "Futura LT", sans-serif;
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--primary);
       margin-bottom: 1.5rem;
-      letter-spacing: 0.1rem;
+      // letter-spacing: 0.1rem;
     }
 
     .divider {
@@ -165,7 +180,7 @@ export default {
       font-family: "Quattrocento Sans", sans-serif;
       font-size: 1.15rem;
       line-height: 1.8;
-      color: #dfdfdf;
+      color: #000;
       margin-bottom: 2rem;
       font-weight: 300;
       text-align: justify;
