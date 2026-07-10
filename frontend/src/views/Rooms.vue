@@ -27,8 +27,9 @@
         </p>
         <div class="options">
           <ul>
-            <li>CHAMBRES CLASSIQUES</li>
-            <li>CHAMBRES SUPERIEURES</li>
+            <li>CHAMBRES CLASSIQUES ◉</li>
+
+            <li> CHAMBRES SUPERIEURES</li>
           </ul>
         </div>
       </div>
