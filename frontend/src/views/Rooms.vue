@@ -18,7 +18,7 @@
     <div class="contentSection">
       <div class="contentWrapper">
         <h2 class="sectionTitle">L'Art de Vivre à la Maison Rouge</h2>
-        <div class="divider"></div>
+        <!-- <div class="divider"></div> -->
         <p class="descriptionParagraph">
           Découvrez nos chambres où confort absolu, design moderne et
           touches artistiques locales se rencontrent pour créer un cadre
@@ -27,9 +27,8 @@
         </p>
         <div class="options">
           <ul>
-            <li>CHAMBRES CLASSIQUES ◉</li>
-
-            <li> CHAMBRES SUPERIEURES</li>
+            <li><a href="#">◉ CHAMBRES CLASSIQUES</a></li>
+            <li><a href="#">◉ CHAMBRES SUPERIEURES</a></li>
           </ul>
         </div>
       </div>
@@ -152,7 +151,7 @@ export default {
   margin-bottom: 20vh;
   display: flex;
   justify-content: center;
-  background-color: var(--primary-variant);
+  // background-color: var(--primary-variant);
 
   .contentWrapper {
     width: 60%;
@@ -161,12 +160,13 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
 
     .sectionTitle {
       font-family: "Futura LT", sans-serif;
       font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      // margin-bottom: 1.5rem;
       // letter-spacing: 0.1rem;
     }
 
@@ -178,15 +178,37 @@ export default {
     }
 
     .descriptionParagraph {
-      font-family: "Quattrocento Sans", sans-serif;
+      // font-family: "Quattrocento Sans", sans-serif;
       font-size: 1.15rem;
       line-height: 1.8;
-      color: #000;
-      margin-bottom: 2rem;
+      color: var(--text-color);
+      // margin-bottom: 2rem;
       font-weight: 300;
-      text-align: justify;
-      text-justify: inter-word;
+      text-align: center;
+      // text-justify: inter-word;
     }
+
+    .options{
+      // background-color: blueviolet;
+      
+    }
+
+    .options ul{
+      list-style: none;
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .options ul li {
+      color: var(--text-color-2);
+    }
+
+    .options ul li:hover{
+      color: var(--text-color);
+    }
+
+    ◉ CHAMBRES SUPERIEURES
+
   }
 }
 

@@ -757,7 +757,7 @@ export default {
   line-height: 1.6;
   text-align: justify;
   /*     margin-bottom: 1.5em; */
-  color: #7a2e2e;
+  color: var(--text-color);
 }
 
 .firstSection .bioPart .bio p .drop-cap {
@@ -767,7 +767,7 @@ export default {
   padding-right: 0.5rem;
   padding-top: 0.3rem;
   // font-family: "Garamond", serif;
-  color: #7a2e2e;
+  color: var(--text-color);
 }
 
 .secondSection {
