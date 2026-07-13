@@ -314,7 +314,7 @@ export default {
 }
 
 .loader-text {
-  color: white;
+  color: var(--text-color);
   font-size: 1.125rem;
   font-weight: 500;
   margin: 0;

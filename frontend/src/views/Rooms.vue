@@ -20,10 +20,10 @@
         <h2 class="sectionTitle">L'Art de Vivre à la Maison Rouge</h2>
         <!-- <div class="divider"></div> -->
         <p class="descriptionParagraph">
-          Découvrez nos chambres où confort absolu, design moderne et
-          touches artistiques locales se rencontrent pour créer un cadre
-          raffiné. Que vous soyez en voyage d'affaires ou en séjour de détente,
-          profitez d'une expérience unique au cœur de Cotonou.
+          Découvrez nos chambres où confort absolu, design moderne et touches
+          artistiques locales se rencontrent pour créer un cadre raffiné. Que
+          vous soyez en voyage d'affaires ou en séjour de détente, profitez
+          d'une expérience unique au cœur de Cotonou.
         </p>
         <div class="options">
           <ul>
@@ -188,27 +188,32 @@ export default {
       // text-justify: inter-word;
     }
 
-    .options{
+    .options {
       // background-color: blueviolet;
-      
     }
 
-    .options ul{
-      list-style: none;
+    .options ul {
       display: flex;
       gap: 0.3rem;
     }
 
     .options ul li {
       color: var(--text-color-2);
+      list-style: none;
     }
 
-    .options ul li:hover{
+    .options ul li a {
+      text-decoration: none;
+      color: var(--text-color-2);
+    }
+
+    .options ul li a:hover {
       color: var(--text-color);
     }
 
-    ◉ CHAMBRES SUPERIEURES
-
+    .options ul li:hover {
+      color: var(--text-color);
+    }
   }
 }
 

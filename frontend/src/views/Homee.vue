@@ -295,7 +295,7 @@
           <img src="@/assets/pictures/photo14.jpg" alt="" />
         </div>
         <div class="grid3">
-          <img src="@/assets/pictures/photo16.jpg" alt="" />
+          <img src="@/assets/pictures/photo17.jpg" alt="" />
         </div>
         <div class="grid4">
           <img src="@/assets/pictures/photo15.jpg" alt="" />
@@ -915,6 +915,9 @@ export default {
 .thirdSection .grid .grid2 img {
   width: 100%;
   height: 100%;
+
+  border-radius: 2rem;
+  box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.15);
 }
 
 .thirdSection .grid .grid3 {
@@ -927,6 +930,8 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.15);
 }
 
 .thirdSection .grid .grid4 {
@@ -938,6 +943,8 @@ export default {
 .thirdSection .grid .grid4 img {
   width: 100%;
   height: 100%;
+  border-radius: 2rem;
+  box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.15);
 }
 
 .thirdSection .grid .grid5 {
