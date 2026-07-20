@@ -301,7 +301,10 @@
           <img src="@/assets/pictures/photo15.jpg" alt="" />
         </div>
         <div class="grid5">
-          <span class="span">REGALEZ <br> VOS PAPILLES</span>
+          <span class="span"
+            >REGALEZ <br />
+            VOS PAPILLES</span
+          >
           <div class="specialButton">
             <!-- From Uiverse.io by Creatlydev -->
             <button class="button">
@@ -355,6 +358,13 @@
               </div>
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="fourthSection">
+      <div class="fourthContainer">
+        <div class="pool">
+          <!-- <img src="" alt=""> -->
         </div>
       </div>
     </div>
@@ -535,7 +545,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  min-height: 300vh;
+  fourthcin-height: 300vh;
   // background-color: teal;
   width: 100%;
   display: flex;
@@ -915,7 +925,7 @@ export default {
 .thirdSection .grid .grid2 img {
   width: 100%;
   height: 100%;
-
+  border: 1px solid rgba(143, 96, 73, 0.25);
   border-radius: 2rem;
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.15);
 }
@@ -931,6 +941,7 @@ export default {
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
+  border: 1px solid rgba(143, 96, 73, 0.6);
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -944,6 +955,7 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 2rem;
+  border: 1px solid rgba(143, 96, 73, 0.6);
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -962,6 +974,26 @@ export default {
   text-align: start;
   color: var(--primary);
   font-family: "Futura LT", sans-serif;
+}
+
+.fourthSection {
+  background-color: teal;
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.fourthSection .fourthContainer {
+  width: 94%;
+  height: 100%;
+  background-color: darkred;
+}
+
+.fourthSection .fourthContainer .pool {
+  background-color: darkblue;
 }
 
 .font {
@@ -1251,6 +1283,4 @@ export default {
     inset: 7px;
   }
 }
-
-
 </style>

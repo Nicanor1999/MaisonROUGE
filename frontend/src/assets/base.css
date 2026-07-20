@@ -121,7 +121,7 @@ p {
   margin: 0;
   padding: 0;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  border-inline: 1px solid var(--border); 
   min-height: 100svh;
   display: flex;
   flex-direction: column;
