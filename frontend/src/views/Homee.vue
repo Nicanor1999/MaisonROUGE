@@ -363,8 +363,22 @@
     </div>
     <div class="fourthSection">
       <div class="fourthContainer">
-        <div class="pool">
-          <!-- <img src="" alt=""> -->
+        <div class="poolSlide">
+          <img src="@/assets/pictures/photo18.jpg" alt="" />
+        </div>
+        <div class="poolTitle">
+          <div class="poolTitle1">Atteindre un sentiment de bien-être</div>
+          <div class="poolTitle2">Private wellness</div>
+        </div>
+        <div class="bio">
+          <p>
+            Profitez de deux magnifiques piscines de 16 mètres de long, pensées
+            pour répondre à toutes vos envies. Que vous souhaitiez vous
+            rafraîchir sous le soleil, vous détendre dans une eau cristalline ou
+            effectuer quelques longueurs pour entretenir votre forme, ces
+            espaces offrent un cadre élégant, apaisant et propice à la
+            relaxation comme à la remise en forme.
+          </p>
         </div>
       </div>
     </div>
@@ -977,7 +991,7 @@ export default {
 }
 
 .fourthSection {
-  background-color: teal;
+  // background-color: teal;
   height: 120vh;
   width: 100%;
   display: flex;
@@ -989,11 +1003,61 @@ export default {
 .fourthSection .fourthContainer {
   width: 94%;
   height: 100%;
-  background-color: darkred;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: darkred;
 }
 
-.fourthSection .fourthContainer .pool {
-  background-color: darkblue;
+.fourthSection .fourthContainer .poolSlide {
+  // background-color: darkblue;
+  width: 90%;
+  height: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.fourthSection .fourthContainer .poolSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.fourthSection .fourthContainer .poolTitle {
+  // background-color: aquamarine;
+  width: 70%;
+  height: 25%;
+  position: relative;
+  z-index: 2;
+  top: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fourthSection .fourthContainer .poolTitle .poolTitle1 {
+  // background-color: burlywood;
+  height: 70%;
+  font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-align: center;
+  font-family: "Futura LT", sans-serif;
+}
+
+.fourthSection .fourthContainer .poolTitle .poolTitle2 {
+  // background-color: darkgreen;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: "Futura LT", sans-serif;
+  letter-spacing: 10px;
+  font-weight: lighter;
+}
+
+.fourthSection .fourthContainer .bio {
+  // background-color: gray;
+  width: 80%;
+  height: 13%;
 }
 
 .font {
